@@ -8,9 +8,9 @@ const actions = [
 ];
 
 const columns = [
-    {label: 'Field Label', fieldName: 'MasterLabel', type: 'text', sortable: true},
+    {label: 'Field Label', fieldName: 'sourceFieldLabel', type: 'text', sortable: true},
     {label: 'Field API Name', fieldName: 'Source_Field_API_Name__c', type: 'text'},
-    {label: 'Data Type', fieldName: '', type: 'text'},
+    {label: 'Data Type', fieldName: 'sourceFieldDataType', type: 'text'},
     {label: 'Maps To', fieldName: '', type: 'text',
         cellAttributes: { iconName: { fieldName: 'mapsToIcon' }, iconPosition: 'right' }},
     {label: 'Field Label', fieldName: 'MasterLabel', type: 'text'},
@@ -70,7 +70,10 @@ export default class Bdi_FieldMappings extends LightningElement {
         let list = [];
         fieldMappings.forEach((mapping) => {
             mapping = this.parse(mapping);
-            mapping.mapsToIcon = 'utility:forward';
+            mapping.dataImportFieldMapping.mapsToIcon = 'utility:forward';
+            mapping.dataImportFieldMapping.sourceFieldLabel = mapping.sourceFieldLabel;
+            mapping.dataImportFieldMapping.sourceFieldDataType = mapping.sourceFieldDataType;
+            mapping = mapping.dataImportFieldMapping;
             list.push(mapping);
         });
         return list;
