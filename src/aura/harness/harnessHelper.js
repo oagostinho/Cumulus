@@ -21,5 +21,9 @@
             }
         });
         $A.enqueueAction(action);
+    },
+
+    log : function(object) {
+        console.log(JSON.parse(JSON.stringify(object)));
     }
 })

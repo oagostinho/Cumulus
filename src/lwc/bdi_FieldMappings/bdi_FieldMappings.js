@@ -92,6 +92,7 @@ export default class Bdi_FieldMappings extends LightningElement {
             case 'delete':
                 console.log('DELETE ACTION');
                 console.log('Row: ', this.parse(row));
+                this.dispatchMessage('deletefieldmapping', row);
                 this.deleteRowFromDatatable(row);
                 alert('Row deleted from datatable in UI, send delete event');
                 // TODO: Add logic to mark field mapping's field isDeleted = true
@@ -135,6 +136,15 @@ export default class Bdi_FieldMappings extends LightningElement {
     handleNewFieldMapping() {
         console.log('bdi_FieldMappings | handleNewFieldMapping()');
         alert('Send create new field mapping event to parent container');
+    }
+
+    dispatchMessage(messageName, message) {
+        console.log('bdi_FieldMappings | dispatchMessage()');
+        const filterChangeEvent = new CustomEvent(messageName, {
+            detail: { message },
+        });
+        // Fire the custom event
+        this.dispatchEvent(filterChangeEvent);
     }
 
     /*******************************************************************************
