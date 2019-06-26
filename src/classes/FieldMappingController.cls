@@ -1,7 +1,3 @@
-/**
- * Created by kenneth.lewis on 2019-06-24.
- */
-
 public with sharing class FieldMappingController {
 
     @AuraEnabled(cacheable=true)

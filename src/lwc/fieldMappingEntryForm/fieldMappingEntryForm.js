@@ -1,7 +1,3 @@
-/**
- * Created by kenneth.lewis on 2019-06-24.
- */
-
 import {LightningElement, api, track} from 'lwc';
 import getFieldInfos from '@salesforce/apex/FieldMappingController.getFieldInfos';
 
