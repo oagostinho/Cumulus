@@ -35,6 +35,7 @@ public with sharing class FieldMappingController {
 
         List<FieldInfo> fieldInfos = new List<FieldInfo>();
         for (DescribeFieldResult describeFieldResult : dfrs.values()) {
+            //todo: filter out system fields and fields that will never be mapped
             fieldInfos.add(new FieldInfo(describeFieldResult));
         }
         System.debug(LoggingLevel.ERROR, '*** variable value: ' + fieldInfos);
@@ -47,12 +48,12 @@ public with sharing class FieldMappingController {
         @AuraEnabled
         public String name;
         @AuraEnabled
-        public DisplayType type;
+        public String displayType;
 
         public FieldInfo(DescribeFieldResult dfr) {
             this.name = dfr.getName();
             this.label = dfr.getLabel();
-            this.type = dfr.getType();
+            this.displayType = dfr.getType().name();
         }
     }
 }
