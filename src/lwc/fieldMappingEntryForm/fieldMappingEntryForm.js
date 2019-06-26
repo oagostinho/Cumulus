@@ -10,7 +10,8 @@ export default class FieldMappingEntryForm extends LightningElement {
     @track selectedSourceFieldName = '';
     displayTypeBySourceFieldNameMap;
 
-    @api targetObjectName; //initialize this public property from parent
+    @api targetObjectName; //initialize this public property from parent,
+                            //currently uses Account as default if not set
     targetOptions = [];
     @track selectedTargetFieldName = '';
     @track validTargetOptions = [];
