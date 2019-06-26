@@ -1,0 +1,39 @@
+<!--
+ - Created by kenneth.lewis on 2019-06-24.
+ -->
+
+<!-- Field Mapping Entry Form -->
+<template>
+    <table>
+        <tr>
+            <td>
+
+<template if:true={options}>
+                <lightning-combobox
+                        name="progress"
+                        label="Source Field API Name"
+                        value={value}
+                        placeholder="Select a source field..."
+                        options={options}
+                        onchange={handleChange}></lightning-combobox>
+
+                <p>Selected value is: {value}</p>
+</template>
+            </td>
+            <td>
+
+                <lightning-combobox
+                        name="progress2"
+                        label="Target Field API Name"
+                        value={value2}
+                        placeholder="Target field ..."
+                        options={options2}
+                        onchange={handleChange2}></lightning-combobox>
+
+                <p>Selected value is: {value2}</p>
+
+            </td>
+        </tr>
+    </table>
+
+</template>

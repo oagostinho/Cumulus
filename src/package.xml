@@ -239,6 +239,7 @@
         <members>ERR_Notifier_TEST</members>
         <members>ERR_ParentAccountUpdater2_TEST</members>
         <members>ERR_ParentAccountUpdater_TEST</members>
+        <members>FieldMappingController</members>
         <members>HH_AutoCompleteDataProvider_LCTRL</members>
         <members>HH_CampaignDedupeBTN_CTRL</members>
         <members>HH_CampaignDedupeBTN_TEST</members>
@@ -1815,8 +1816,6 @@
         <members>pmtModifyCurrency</members>
         <members>pmtPaidPaymentDateRequired</members>
         <members>pmtUnpaidPaymentScheduledDateRequired</members>
-        <members>pmtWriteOffPaidPayment</members>
-        <members>pmtWrittenOffPaymentDateRequired</members>
         <members>pmtWizardBtnCalcPayments</members>
         <members>pmtWizardBtnCreatePayments</members>
         <members>pmtWizardBtnRemovePaidPayments</members>
@@ -1852,6 +1851,7 @@
         <members>pmtWizardWriteoffNoAccessMessage</members>
         <members>pmtWizardYear</members>
         <members>pmtWriteOffPaidPayment</members>
+        <members>pmtWrittenOffPaymentDateRequired</members>
         <members>pscDeleteRow</members>
         <members>pscManageSoftCreditsAdd</members>
         <members>pscManageSoftCreditsAmount</members>
@@ -2779,6 +2779,8 @@
     </types>
     <types>
         <members>bdi_FieldMappings</members>
+        <members>fieldMappingEntryForm</members>
+        <members>mappingService</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
@@ -2908,5 +2910,5 @@
         <members>Opportunity.Opportunity Email Acknowledgment</members>
         <name>WorkflowRule</name>
     </types>
-    <version>45.0</version>
+    <version>43.0</version>
 </Package>

@@ -28,4 +28,11 @@
             <lightning:spinner/>
         </aura:set>
     </aura:if>
+
+
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_1-of-1 slds-card slds-p-around_x-small">
+            <c:fieldMappingEntryForm aura:id="fieldMappingEntryForm" />
+        </div>
+    </div>
 </aura:component>	
