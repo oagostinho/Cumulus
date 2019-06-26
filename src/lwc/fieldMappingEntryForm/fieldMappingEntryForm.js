@@ -35,13 +35,13 @@ export default class FieldMappingEntryForm extends LightningElement {
 
     setDisplayTypeByFieldName = () => {
         console.log('*** ' + 'setting displaytypesbyfieldname' + ' ***');
-            this.displayTypesByFieldName = new Map();
-        this.targetOptions.forEach((item) => {
-            console.log(item);
-            // this.displayTypesByFieldName[item.value] = item.displayType;
-            this.displayTypesByFieldName.set(item.value, item.displayType);
+        this.displayTypeBySourceFieldNameMap= new Map();
+        this.options.forEach((sourceFieldOption) => {
+            // console.log(sourceFieldOption);
+            // this.displayTypeBySourceFieldNameMap[sourceFieldOption.value] = sourceFieldOption.displayType;
+            this.displayTypeBySourceFieldNameMap.set(sourceFieldOption.value, sourceFieldOption.displayType);
         });
-        console.log('this.displayTypesByFieldName: ', this.displayTypesByFieldName);
+        console.log('this.displayTypeBySourceFieldNameMap: ', this.displayTypeBySourceFieldNameMap);
     }
 
     getOptions = (data) => {
@@ -64,8 +64,9 @@ export default class FieldMappingEntryForm extends LightningElement {
         console.log('*** ' + 'in handleChange' + ' ***');
         console.log('event.detail.value: ', event.detail.value);
         this.value = event.detail.value;
-        console.log('this.displayTypesByFieldName: ' + this.displayTypesByFieldName);
-        let sourceFieldType = this.displayTypesByFieldName.get(this.value);
+        // console.log('this.displayTypeBySourceFieldNameMap: ' + this.displayTypeBySourceFieldNameMap);
+        console.log(this.displayTypeBySourceFieldNameMap);
+        let sourceFieldType = this.displayTypeBySourceFieldNameMap.get(this.value);
         console.log('sourceFieldType: ', sourceFieldType);
         this.validTargetOptions = this.targetOptions.filter(this.isValidTargetMapping(sourceFieldType));
         console.log('*** ' + 'after filtering' + ' ***');
@@ -75,7 +76,7 @@ export default class FieldMappingEntryForm extends LightningElement {
 
     @track value2 = 'target field options...';
     targetOptions = [];
-    displayTypesByFieldName;
+    displayTypeBySourceFieldNameMap;
     @track validTargetOptions = [];
 
     handleChange2(event) {
@@ -83,11 +84,12 @@ export default class FieldMappingEntryForm extends LightningElement {
     }
 
     isValidTargetMapping = (sourceType) => {
-        return (targetFieldInfo) => {
             console.log('*** ' + 'in returned function' + ' ***');
             console.log(sourceType);
-            console.log(targetFieldInfo);
+        return (targetFieldInfo) => {
+            // console.log(targetFieldInfo);
             if (targetFieldInfo.displayType === sourceType) {
+                console.log('*** ' + 'targetFieldInfo.displayType' + targetFieldInfo.displayType + ' is valid! ***');
                 return true;
             }
             //future implementation of multiple target field types
