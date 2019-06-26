@@ -8,29 +8,29 @@
         <tr>
             <td>
 
-<template if:true={options}>
+<!--<template if:true={sourceOptions}>-->
                 <lightning-combobox
-                        name="progress"
+                        name="sourceField"
                         label="Source Field API Name"
-                        value={value}
+                        value={selectedSourceFieldName}
                         placeholder="Select a source field..."
-                        options={options}
-                        onchange={handleChange}></lightning-combobox>
+                        options={sourceOptions}
+                        onchange={handleSourceFieldChange}></lightning-combobox>
 
-                <p>Selected value is: {value}</p>
-</template>
+                <p>Selected source field is: {selectedSourceFieldName}</p>
+<!--</template>-->
             </td>
             <td>
 
                 <lightning-combobox
-                        name="progress2"
+                        name="targetField"
                         label="Target Field API Name"
-                        value={value2}
-                        placeholder="Target field ..."
+                        value={selectedTargetFieldName}
+                        placeholder="Target field options ..."
                         options={validTargetOptions}
-                        onchange={handleChange2}></lightning-combobox>
+                        onchange={handleTargetFieldChange}></lightning-combobox>
 
-                <p>Selected value is: {value2}</p>
+                <p>Selected target field is: {selectedTargetFieldName}</p>
 
             </td>
         </tr>

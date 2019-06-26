@@ -5,41 +5,25 @@
 public with sharing class FieldMappingController {
 
     @AuraEnabled(cacheable=true)
-    public static List<FieldInfo> getTargetFieldInfos(
-            String sourceObjectName,
-            String sourceFieldName,
-            String targetObjectName) {
-        //Provide the list of fields on the target object that match the data type of the
-        // provided field
-        String nsAppropriateSourceObjectName = UTIL_Namespace.StrAllNSPrefix(sourceObjectName);
-        String nsAppropriateSourceFieldName = UTIL_Namespace.StrAllNSPrefix(sourceFieldName);
-        String nsAppropriateTargetObjectName = UTIL_Namespace.StrAllNSPrefix(targetObjectName);
+    public static Map<String, List<FieldInfo>> getFieldInfos(String[] objectNames) {
+        Map<String, List<FieldInfo>> fieldInfosByObjectName = new Map<String, List<FieldInfo>>();
+        for (String objectName : objectNames) {
+            if (fieldInfosByObjectName.keySet().contains(objectName)) {
+                continue;
+            }
 
-        System.debug(LoggingLevel.ERROR, '*** variable value: ' + nsAppropriateTargetObjectName);
-        System.debug(LoggingLevel.ERROR, '^^^^^^ nsAppropriateTargetObjectName ^^^^^^');
-        Map<String, Schema.DescribeFieldResult> dfrs =
-                UTIL_Describe.getAllFieldsDescribe(nsAppropriateTargetObjectName);
+            Map<String, Schema.DescribeFieldResult> dfrs =
+                    UTIL_Describe.getAllFieldsDescribe(
+                            UTIL_Namespace.StrAllNSPrefix(objectName)
+                    );
 
-        List<FieldInfo> fieldInfos = new List<FieldInfo>();
-        for (DescribeFieldResult describeFieldResult : dfrs.values()) {
-            fieldInfos.add(new FieldInfo(describeFieldResult));
+            List<FieldInfo> fieldInfos = new List<FieldInfo>();
+            for (DescribeFieldResult dfr : dfrs.values()) {
+                fieldInfos.add(new FieldInfo(dfr));
+            }
+            fieldInfosByObjectName.put(objectName, fieldInfos);
         }
-        System.debug(LoggingLevel.ERROR, '*** fieldInfos from getTargetFieldInfos value: ' + fieldInfos);
-        return fieldInfos;
-    }
-
-    @AuraEnabled(cacheable=true)
-    public static List<FieldInfo> getSourceFieldInfos(String objectApiName){
-        Map<String, Schema.DescribeFieldResult> dfrs =
-                UTIL_Describe.getAllFieldsDescribe(objectApiName);
-
-        List<FieldInfo> fieldInfos = new List<FieldInfo>();
-        for (DescribeFieldResult describeFieldResult : dfrs.values()) {
-            //todo: filter out system fields and fields that will never be mapped
-            fieldInfos.add(new FieldInfo(describeFieldResult));
-        }
-        System.debug(LoggingLevel.ERROR, '*** variable value: ' + fieldInfos);
-        return fieldInfos;
+        return fieldInfosByObjectName;
     }
 
     public class FieldInfo {

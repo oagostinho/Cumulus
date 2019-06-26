@@ -2,51 +2,48 @@
  * Created by kenneth.lewis on 2019-06-24.
  */
 
-import {LightningElement, track, wire} from 'lwc';
-import getSourceFieldInfos from '@salesforce/apex/FieldMappingController.getSourceFieldInfos';
-import getTargetFieldInfos from '@salesforce/apex/FieldMappingController.getTargetFieldInfos';
+import {LightningElement, api, track} from 'lwc';
+import getFieldInfos from '@salesforce/apex/FieldMappingController.getFieldInfos';
 
 export default class FieldMappingEntryForm extends LightningElement {
-    @track sourceFieldName = '';
-    @track sourceFieldOptions = getSourceFieldInfos({objectApiName:'DataImport__c'});
 
-    @track value = 'Select a source field';
-    @track options = [];
+    @track error;
 
-    constructor(){
+    sourceObjectName = 'DataImport__c';
+    @track sourceOptions = [];
+    @track selectedSourceFieldName = '';
+    displayTypeBySourceFieldNameMap;
+
+    @api targetObjectName; //initialize this public property from parent
+    targetOptions = [];
+    @track selectedTargetFieldName = '';
+    @track validTargetOptions = [];
+
+    constructor() {
         super();
-        getSourceFieldInfos({objectApiName: 'DataImport__c'})
-            .then((data) => {
-                this.options = this.getOptions(data);
-            });
 
-        getTargetFieldInfos(
-            {
-                sourceObjectName: 'DataImport__c',
-                sourceFieldName: 'Name',
-                targetObjectName: 'Contact'
-            })
-            .then((data) => {
-                // todo: this.initialize(data); //avoid looping twice
-                this.targetOptions = this.getOptions(data);
+        getFieldInfos({objectNames:[this.sourceObjectName, this.targetObjectName || 'Account']})
+            .then(data => {
+                this.sourceOptions = this.getOptions(data[this.sourceObjectName]);
+                this.targetOptions = this.getOptions(data[this.targetObjectName || 'Account']);
                 this.setDisplayTypeByFieldName();
+            })
+            .catch(error => {
+                this.error = error;
             });
     }
 
-    setDisplayTypeByFieldName = () => {
-        console.log('*** ' + 'setting displaytypesbyfieldname' + ' ***');
-        this.displayTypeBySourceFieldNameMap= new Map();
-        this.options.forEach((sourceFieldOption) => {
-            // console.log(sourceFieldOption);
-            // this.displayTypeBySourceFieldNameMap[sourceFieldOption.value] = sourceFieldOption.displayType;
-            this.displayTypeBySourceFieldNameMap.set(sourceFieldOption.value, sourceFieldOption.displayType);
+    setDisplayTypeByFieldName() {
+        this.displayTypeBySourceFieldNameMap = new Map();
+        this.sourceOptions.forEach(sourceFieldOption => {
+            this.displayTypeBySourceFieldNameMap.set(
+                sourceFieldOption.value, sourceFieldOption.displayType);
         });
-        console.log('this.displayTypeBySourceFieldNameMap: ', this.displayTypeBySourceFieldNameMap);
     }
 
-    getOptions = (data) => {
+    getOptions(data) {
         let x = [];
-        data.forEach((item) => {
+        data.forEach(item => {
             let option = {
                 label: item.label,
                 value: item.name,
@@ -57,39 +54,30 @@ export default class FieldMappingEntryForm extends LightningElement {
         return x;
     }
 
-    // getOptionsByName =
+    handleSourceFieldChange(event) {
+        this.selectedTargetFieldName = '';
 
-    handleChange(event) {
-        // console.log(JSON.stringify(event));
-        console.log('*** ' + 'in handleChange' + ' ***');
+        console.log('*** ' + 'in handleSourceFieldChange' + ' ***');
         console.log('event.detail.value: ', event.detail.value);
-        this.value = event.detail.value;
-        // console.log('this.displayTypeBySourceFieldNameMap: ' + this.displayTypeBySourceFieldNameMap);
-        console.log(this.displayTypeBySourceFieldNameMap);
-        let sourceFieldType = this.displayTypeBySourceFieldNameMap.get(this.value);
+        this.selectedSourceFieldName = event.detail.value;
+
+        console.log(this.displayTypeBySourceFieldNameMap); //undefined?
+        let sourceFieldType = this.displayTypeBySourceFieldNameMap.get(this.selectedSourceFieldName);
         console.log('sourceFieldType: ', sourceFieldType);
+
         this.validTargetOptions = this.targetOptions.filter(this.isValidTargetMapping(sourceFieldType));
         console.log('*** ' + 'after filtering' + ' ***');
         console.log('this.validTargetOptions: ', this.validTargetOptions);
-        console.log('*** ' + 'end handleChange' + ' ***');
+        console.log('*** ' + 'end handleSourceFieldChange' + ' ***');
     }
 
-    @track value2 = 'target field options...';
-    targetOptions = [];
-    displayTypeBySourceFieldNameMap;
-    @track validTargetOptions = [];
-
-    handleChange2(event) {
-        this.value2 = event.detail.value;
+    handleTargetFieldChange(event) {
+        this.selectedTargetFieldName = event.detail.value;
     }
 
-    isValidTargetMapping = (sourceType) => {
-            console.log('*** ' + 'in returned function' + ' ***');
-            console.log(sourceType);
-        return (targetFieldInfo) => {
-            // console.log(targetFieldInfo);
+    isValidTargetMapping(sourceType) {
+        return targetFieldInfo => {
             if (targetFieldInfo.displayType === sourceType) {
-                console.log('*** ' + 'targetFieldInfo.displayType' + targetFieldInfo.displayType + ' is valid! ***');
                 return true;
             }
             //future implementation of multiple target field types
