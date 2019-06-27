@@ -1,0 +1,24 @@
+<!-- Field Mapping Entry Form -->
+<template>
+
+    <lightning-combobox
+            name="sourceField"
+            label="Source Field API Name"
+            value={selectedSourceFieldName}
+            placeholder="Select a source field..."
+            options={sourceOptions}
+            onchange={handleSourceFieldChange}></lightning-combobox>
+
+    <p>Selected source field is: {selectedSourceFieldName}</p>
+
+    <lightning-combobox
+            name="targetField"
+            label="Target Field API Name"
+            value={selectedTargetFieldName}
+            placeholder="Target field options ..."
+            options={validTargetOptions}
+            onchange={handleTargetFieldChange}></lightning-combobox>
+
+    <p>Selected target field is: {selectedTargetFieldName}</p>
+
+</template>
