@@ -67,9 +67,11 @@ export default class FieldMappingEntryForm extends LightningElement {
     isValidTargetMapping(sourceType) {
         return targetFieldInfo => {
             return ((targetFieldInfo.displayType === sourceType)
-                || this.validTargetTypesBySourceType
+                || (this.validTargetTypesBySourceType
+                    .get(sourceType)
+                && this.validTargetTypesBySourceType
                 .get(sourceType)
-                .includes(targetFieldInfo.displayType));
+                .includes(targetFieldInfo.displayType)));
         }
     }
 
