@@ -1,0 +1,5 @@
+In this BGE/BDI scenario, the org is empty on initial data load. This will help
+us understand whether the size of the initial org is a significant part of
+load times.
+
+5000 records.

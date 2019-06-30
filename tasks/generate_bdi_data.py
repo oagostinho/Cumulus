@@ -87,7 +87,7 @@ class GenerateBDIData(BatchDataTask):
         self.base = base
         num_records = int(self.options["num_records"])
         batch_size = math.floor(num_records / 10)
-        self.make_all_records(batch_size)
+        #  self.make_all_records(batch_size)
         self.generate_bdi_denormalized_table(num_records)
         self.session.commit()
 
