@@ -1,0 +1,158 @@
+<template>
+    <template if:true={isModalOpen}>
+        <section role="dialog"
+            tabindex="-1"
+            aria-labelledby="modal-heading-01"
+            aria-modal="true"
+            aria-describedby="modal-content-id-1"
+            class="slds-modal slds-fade-in-open"> <!--slds-modal_large-->
+
+            <div class="slds-modal__container">
+                <div class="slds-modal__container_extension">
+
+                    <template if:true={isLoading}>
+                        <lightning-spinner alternative-text="Loading">
+                        </lightning-spinner>
+                    </template>
+
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Close">
+                            <!-- TODO: Fix missing icons -->
+                            <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                            </svg>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{modalTitle}</h2>
+                    </header>
+
+                    <div class="slds-modal__content slds-p-around_medium slds-modal_content_extension" id="modal-content-id-1">
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-size_1-of-1">
+                                <div class="slds-section slds-is-open slds-m-bottom_small">
+                                    <!--
+                                    <h3 class="slds-section__title slds-theme_shade">
+                                        <span class="slds-truncate slds-p-horizontal_small"
+                                              title="">
+                                              
+                                        </span>
+                                    </h3>
+                                    -->
+                                    <lightning-input 
+                                        class="slds-m-bottom_small"
+                                        label="Mapping Group Name"
+                                        type="text"
+                                        name="masterLabel"
+                                        value={row.MasterLabel}
+                                        onchange={handleMasterLabelChange}
+                                        field-level-help="Placeholder">
+                                    </lightning-input>
+                                    <div class="slds-size_1-of-1 slds-m-vertical_medium">
+                                        <h3 class="slds-text-align_center"><i>For</i></h3>
+                                    </div>
+                                    <lightning-combobox
+                                        class="slds-m-bottom_small"
+                                        name="objectName"
+                                        label="Object Name"
+                                        value={row.Object_API_Name}
+                                        placeholder="Select Object"
+                                        options={objectOptions}
+                                        onchange={handleObjectAPINameChange} 
+                                        field-level-help="Placeholder">
+                                    </lightning-combobox>
+                                    <lightning-combobox
+                                        class="slds-m-bottom_small"
+                                        name="relationshipToPredecessor"
+                                        label="Is Child/Parent"
+                                        value={row.Relationship_To_Predecessor}
+                                        placeholder="Select Relationship"
+                                        options={predRelationshipOptions}
+                                        onchange={handleRelationshipToPredChange}
+                                        field-level-help="Placeholder" >
+                                    </lightning-combobox>
+                                    <lightning-combobox
+                                        class="slds-m-bottom_small"
+                                        name="ofThisMappingGroup"
+                                        label="Of This Mapping Group"
+                                        value={row.Predecessor}
+                                        placeholder="Select Mapping Group"
+                                        options={objectMappingOptions}
+                                        onchange={handlePredecessorChange}
+                                        field-level-help="Placeholder">
+                                    </lightning-combobox>
+                                    <lightning-combobox
+                                        class="slds-m-bottom_small"
+                                        placeholder="Select Field"
+                                        label="Through This Field"
+                                        name="throughThisField"
+                                        options={relationshipFieldOptions}
+                                        value={row.Relationship_Field}
+                                        onchange={handleRelationshipFieldChange}
+                                        disabled={isRelationshipFieldDisabled}
+                                        field-level-help="Placeholder">
+                                    </lightning-combobox>
+                                    <div class="slds-size_1-of-1 slds-m-top_large">
+                                        <h3 class="slds-text-heading_small slds-text-heading_small_extension">
+                                            <span class="slds-truncate"
+                                                    title="Import Details">
+                                                    Import Details
+                                            </span>
+                                        </h3>
+                                    </div>
+                                    <!--
+                                    <div class="slds-size_1-of-1 slds-m-top_medium">
+                                        <div class="slds-section slds-is-open">
+                                            <h3 class="slds-section__title">
+                                                <span class="slds-truncate"
+                                                        title="Import Details">
+                                                        Import Details
+                                                </span>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    -->
+                                    <lightning-combobox
+                                        class="slds-m-bottom_small"
+                                        name="importedRecordFieldName"
+                                        label="Imported Record Field Name"
+                                        value={row.Imported_Record_Field_Name}
+                                        placeholder="Select Field"
+                                        options={diImportRecordFieldOptions}
+                                        onchange={handleImportedRecordFieldNameChange}
+                                        field-level-help="Placeholder" >
+                                    </lightning-combobox>                                   
+                                    <lightning-combobox
+                                        class="slds-m-bottom_small"
+                                        name="importedRecordStatusFieldName"
+                                        label="Imported Record Status Field Name"
+                                        placeholder="Select Field"
+                                        options={diImportRecordStatusFieldOptions}
+                                        value={row.Imported_Record_Status_Field_Name}
+                                        onchange={handleImportedRecordStatusFieldNameChange}
+                                        field-level-help="Placeholder">
+                                    </lightning-combobox>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <footer class="slds-modal__footer">
+                        <button class="slds-button slds-button_neutral"
+                                onclick={handleCloseModal}>
+                            Cancel
+                        </button>
+                        <button class="slds-button slds-button_brand"
+                                onclick={handleSave}>
+                            Save
+                        </button>
+                    </footer>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

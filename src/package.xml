@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Cumulus</fullName>
     <types>
@@ -2811,7 +2811,8 @@
         <members>bdiFieldMappingModal</members>
         <members>bdiFieldMappingModalComboboxSearch</members>
         <members>bdiFieldMappings</members>
-        <members>bdi_ObjectMappings</members>
+        <members>bdiObjectMappingModal</members>
+        <members>bdiObjectMappings</members>
         <members>platformEventListener</members>
         <members>pubsubNoPageRef</members>
         <members>stencil</members>

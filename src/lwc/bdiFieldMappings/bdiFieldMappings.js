@@ -51,7 +51,9 @@ export default class bdiFieldMappings extends LightningElement {
 
     @api
     refresh() {
-        this.init();
+        if (this.displayFieldMappings) {
+            this.init();
+        }
     }
 
     handleNavButton() {
@@ -74,6 +76,7 @@ export default class bdiFieldMappings extends LightningElement {
     * @description Group up various get data calls to apex
     */
     init = async() => {
+        console.log('in bdiFieldMappings init');
         try {
             this.isLoading = true;
 
@@ -116,17 +119,20 @@ export default class bdiFieldMappings extends LightningElement {
     * send out a response.
     */
     handleDeploymentTimeout(event) {
-        let that = this;
-        this.deploymentTimer = setTimeout(function() {
-            that.isLoading = false;
-            fireEvent(this.pageRef, 'closeModal', {});
-            that.showToast(
-                'Field Mapping deployment is taking longer than expected.',
-                'Your deployment ({0}) will continue to process in the background.',
-                'warning',
-                'sticky',
-                [event.deploymentId]);
-        }, this.deploymentTimeout, that);
+        if (this.displayFieldMappings) {
+            console.log('in bdiFieldMappings handleDeploymentResponse');
+            let that = this;
+            this.deploymentTimer = setTimeout(function() {
+                that.isLoading = false;
+                fireEvent(this.pageRef, 'closeModal', {});
+                that.showToast(
+                    'Field Mapping deployment is taking longer than expected.',
+                    'Your deployment ({0}) will continue to process in the background.',
+                    'warning',
+                    'sticky',
+                    [event.deploymentId]);
+            }, this.deploymentTimeout, that);
+        }
     }
 
     /*******************************************************************************
@@ -137,24 +143,27 @@ export default class bdiFieldMappings extends LightningElement {
     * @param {object} platformEvent: Object containing the platform event payload
     */
     handleDeploymentResponse(platformEvent) {
-        clearTimeout(this.deploymentTimer);
-        fireEvent(this.pageRef, 'refresh', {});
-        fireEvent(this.pageRef, 'closeModal', {});
+        if (this.displayFieldMappings) {
+            console.log('in bdiFieldMappings handleDeploymentResponse');
+            clearTimeout(this.deploymentTimer);
+            fireEvent(this.pageRef, 'refresh', {});
+            fireEvent(this.pageRef, 'closeModal', {});
 
-        const payload = platformEvent.response.data.payload;
-        const status = payload.Status__c || payload.npsp__Status__c;
-        const deploymentId = payload.DeploymentId__c || payload.npsp__DeploymentId__c;
+            const payload = platformEvent.response.data.payload;
+            const status = payload.Status__c || payload.npsp__Status__c;
+            const deploymentId = payload.DeploymentId__c || payload.npsp__DeploymentId__c;
 
-        if (status === 'Succeeded') {
-            this.showToast(
-                'Deployment completed with Status: ' + status,
-                'Deployment Id: ' + deploymentId,
-                'success');
-        } else {
-            this.showToast(
-                'Deployment completed with Status: ' + status,
-                'Deployment Id: ' + deploymentId,
-                'error');
+            if (status === 'Succeeded') {
+                this.showToast(
+                    'Deployment completed with Status: ' + status,
+                    'Deployment Id: ' + deploymentId,
+                    'success');
+            } else {
+                this.showToast(
+                    'Deployment completed with Status: ' + status,
+                    'Deployment Id: ' + deploymentId,
+                    'error');
+            }
         }
     }
 
@@ -181,11 +190,13 @@ export default class bdiFieldMappings extends LightningElement {
     * the currently selected object and child field mappings.
     */
     handleOpenModal() {
-        fireEvent(this.pageRef, 'openModal', {
-            objectMapping: this.objectMapping,
-            row: undefined,
-            fieldMappings: this.fieldMappings
-        });
+        if (this.displayFieldMappings) {
+            fireEvent(this.pageRef, 'openModal', {
+                objectMapping: this.objectMapping,
+                row: undefined,
+                fieldMappings: this.fieldMappings
+            });
+        }
     }
 
     /*******************************************************************************
@@ -241,14 +252,16 @@ export default class bdiFieldMappings extends LightningElement {
     * @param {string} deploymentId: Custom Metadata Deployment Id
     */
     handleDeleteDeploymentId(deploymentId) {
-        const deploymentEvent = new CustomEvent('deployment', {
-            bubbles: true,
-            composed: true,
-            detail: {deploymentId}
-        });
-        this.dispatchEvent(deploymentEvent);
+        if (this.displayFieldMappings) {
+            const deploymentEvent = new CustomEvent('deployment', {
+                bubbles: true,
+                composed: true,
+                detail: {deploymentId}
+            });
+            this.dispatchEvent(deploymentEvent);
 
-        this.handleDeploymentTimeout({ deploymentId: deploymentId });
+            this.handleDeploymentTimeout({ deploymentId: deploymentId });
+        }
     }
 
     /*******************************************************************************

@@ -11,8 +11,11 @@
             "c/bdiFieldMappings": [
                 "bdiFieldMappings/bdiFieldMappings.js"
             ],
-            "c/bdi_ObjectMappings": [
-                "bdi_ObjectMappings/bdi_ObjectMappings.js"
+            "c/bdiObjectMappingModal": [
+                "bdiObjectMappingModal/bdiObjectMappingModal.js"
+            ],
+            "c/bdiObjectMappings": [
+                "bdiObjectMappings/bdiObjectMappings.js"
             ],
             "c/platformEventListener": [
                 "platformEventListener/platformEventListener.js"

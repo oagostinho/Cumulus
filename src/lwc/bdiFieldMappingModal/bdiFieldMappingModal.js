@@ -216,6 +216,7 @@ export default class bdiFieldMappingModal extends LightningElement {
     * @description Handles the close modal event from bdiFieldMappings
     */
     handleCloseModal() {
+        console.log('In bdiFieldMappings handleCloseModal');
         this.isModalOpen = false;
     }
 
