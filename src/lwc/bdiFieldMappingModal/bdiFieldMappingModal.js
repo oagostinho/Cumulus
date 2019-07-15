@@ -86,6 +86,7 @@ export default class bdiFieldMappingModal extends LightningElement {
     * @param event: Event containing row details or lack of row details
     */
     handleOpenModal(event) {
+        console.log('In bdiFieldMappings handleOpenModal');
         this.isModalOpen = true;
         this.isLoading = true;
         this.hasSourceFieldErrors = false;
@@ -236,6 +237,7 @@ export default class bdiFieldMappingModal extends LightningElement {
     * function on receiving an id back from createDataImportFieldMapping.
     */
     handleSave() {
+        console.log('In bdiFieldMappings handleSave');
         let rowDetails;
 
         if (this.row) {
@@ -314,6 +316,7 @@ export default class bdiFieldMappingModal extends LightningElement {
     * @param {string} deploymentId: Custom Metadata Deployment Id
     */
     handleDeploymentId(deploymentId) {
+        console.log('In bdiFieldMappings handleDeploymentId');
         const deploymentEvent = new CustomEvent('deployment', {
             bubbles: true,
             composed: true,

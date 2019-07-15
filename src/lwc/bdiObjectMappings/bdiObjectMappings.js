@@ -29,6 +29,7 @@ export default class bdiObjectMappings extends LightningElement {
 
     @api
     refresh() {
+        console.log('in refresh outside of displayObjectMappings check.');
         if (this.displayObjectMappings) {
             console.log('in refresh');
             this.isLoading = true;
@@ -159,8 +160,8 @@ export default class bdiObjectMappings extends LightningElement {
                 rowString = JSON.stringify(row);
 
                 createDataImportObjectMapping({objectMappingString: rowString})
-                    .then((data) => {
-                        console.log(this.log(data));
+                    .then((deploymentId) => {
+                        console.log('Delete deployment Id is: ' + deploymentId);
                         this.handleDeleteDeploymentId(deploymentId);
                     })
                     .catch((error) => {

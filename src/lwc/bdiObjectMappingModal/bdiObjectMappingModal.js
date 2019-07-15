@@ -21,42 +21,10 @@ export default class bdiObjectMappingModal extends LightningElement {
 
     @track modalTitle;
 
-    // Combobox vars
-    @track selectedSourceFieldLabel;
-    @track sourceFieldLabelOptions;
-    @track selectedSourceFieldAPIName;
-    @track sourceFieldAPINameOptions;
-
-    @track selectedTargetFieldLabel;
-    @track targetFieldLabelOptions;
-    @track selectedTargetFieldAPIName;
-    @track targetFieldAPINameOptions;
-
-    // This is kinda dumb, but there's no way to get the label from the selected option in the combobox
-    // via the onchange event handler. As far as I can tell?
-    @api diFieldsByLabel;
-    @api diFieldsByAPIName;
-
-    @api targetObjectFieldsByLabel;
-    @api targetObjectFieldsByAPIName;
-
-    // Map of field lists by Display Type
-    @api targetFieldsByLabelByDisplayType;
-    @api targetFieldsByAPINameByDisplayType;
-
     @track diImportRecordFieldOptions;
     @track diImportRecordStatusFieldOptions;
     @track objectMappingOptions;
     @track relationshipFieldOptions;
-
-    //@track isRelationshipFieldDisabled;
-
-    get isTargetFieldDisabled() {
-        if (this.selectedSourceFieldAPIName || this.selectedSourceFieldLabel) {
-            return false;
-        }
-        return true;
-    }
 
     constructor() {
         super();
@@ -117,7 +85,7 @@ export default class bdiObjectMappingModal extends LightningElement {
             this.row.Data_Import_Object_Mapping_Set = 'Default_Object_Mapping_Set';
             this.modalTitle = 'Edit Mapping Group';
             console.log(this.row);
-            console.log(this.log(this.row));
+            this.getRelationshipFieldOptions();
 
         } else {
             //New Object mapping

@@ -91,7 +91,7 @@ public class BDI_ManageAdvancedMappingCtrl {
     * component
     * @return List: List of Data Import Object Mapping
     */
-    @AuraEnabled(cacheable=true)
+    @AuraEnabled(cacheable=false)
     public static DataImportObjectMapping[] getObjectMappings(){
         DataImportObjectMapping[] objMappingWrappers = new DataImportObjectMapping[]{};
         Data_Import_Object_Mapping__mdt[] objMappings = bdiCMT.objMappingsByDevName.values();
