@@ -1,0 +1,500 @@
+  127  adb devices -l
+  128  adb devices -l
+  129  adb devices -l
+  130  adb devices -l
+  131  adb devices -l
+  132  adb devices -l
+  133  adb devices -l
+  134  adb devices -l
+  135  adb devices -l
+  136  adb devices -l
+  137  adb devices -l
+  138  adb devices -l
+  139  adb devices -l
+  140  adb devices -l
+  141  adb devices -l
+  142  adb devices -l
+  143  adb devices -l
+  144  adb devices -l
+  145  adb devices -l
+  146  adb devices -l
+  147  react-native run-android
+  148  react-native run-android
+  149  adb devices -l
+  150  history | grep camera
+  151  ls -als
+  152  npm start
+  153  npm start
+  154  npm start
+  155  /Users/Orlando/myWorkSpace2019/myproject2019/stellaxius_expenses_salesforce_react_native/StellaxiusExpensesAppReact/node_modules/react-native/scripts/launchPackager.command ; exit;
+  156  /Applications/Genymotion\ Shell.app/Contents/MacOS/genyshell ; exit;
+  157  adb devices
+  158  adb devices
+  159  react-native run-android
+  160  adb devices
+  161  adb devices
+  162  adb devices
+  163  adb devices
+  164  adb devices
+  165  adb devices
+  166  adb devices
+  167  adb devices
+  168  adb devices
+  169  adb devices
+  170  adb devices
+  171  adb devices
+  172  adb devices
+  173  adb devices
+  174  adb devices
+  175  adb devices
+  176  adb kill-server
+  177  adb start-server
+  178  adb devices
+  179  adb devices -l
+  180  adb devices -l
+  181  adb devices -l
+  182  adb kill-server
+  183  adb start-server
+  184  adb devices -l
+  185  react-native run-android
+  186  adb tcpip 5555
+  187  adb tcpip 5555
+  188  adb tcpip 5555
+  189  adb tcpip 5555
+  190  adb tcpip 5555
+  191  adb tcpip 5555
+  192  adb tcpip 5555
+  193  adb tcpip 5555
+  194  adb tcpip 5555
+  195  adb tcpip 5555
+  196  adb tcpip 5555
+  197  adb tcpip 5555
+  198  adb tcpip 555
+  199  adb kill-server
+  200  adb tcpip 5555
+  201  brew update
+  202  npm start
+  203  cd /Users/Orlando/myWorkSpace2019/myproject2019/stellaxius_expenses_salesforce_react_native/StellaxiusExpensesAppReact/
+  204  ls -als
+  205  npm start
+  206  npm start
+  207  npm start
+  208  npm start
+  209  /Users/Orlando/myWorkSpace2019/myproject2019/stellaxius_expenses_salesforce_react_native/StellaxiusExpensesAppReact/node_modules/react-native/scripts/launchPackager.command ; exit;
+  210  /Users/Orlando/myWorkSpace2019/myproject2019/stellaxius_expenses_salesforce_react_native/StellaxiusExpensesAppReact/node_modules/react-native/scripts/launchPackager.command ; exit;
+  211  npm start
+  212  ifconfig
+  213  npm start
+  214  adb devices -l
+  215  adb devices -l
+  216  adb devices -l
+  217  adb devices -l
+  218  adb devices -l
+  219  adb devices -l
+  220  adb devices -l
+  221  adb devices -l
+  222  adb devices -l
+  223  adb devices -l
+  224  adb devices -l
+  225  pwd
+  226  ls
+  227  pwd
+  228  react-native run-android
+  229  react-native run-android
+  230  react-native run-android
+  231  react-native run-android
+  232  history | grep graddle
+  233  history | grep gradle
+  234  ./gradlew assembleDebug
+  235  cd android/
+  236  ./gradlew assembleDebug
+  237  react-native log-android
+  238  history | gradle
+  239  history | grep  gradle
+  240  ./gradlew assembleDebug
+  241  history
+  242  history | 
+  243  ./gradlew assembleDebug
+  244  react-native run-android
+  245  cd ..
+  246  react-native run-android
+  247  react-native run-android
+  248  adb devices -l
+  249  react-native run-android
+  250  react-native run-android
+  251  adb kill-server
+  252  react-native run-android
+  253  /Users/Orlando/myWorkSpace2019/myproject2019/stellaxius_expenses_salesforce_react_native/StellaxiusExpensesAppReact/node_modules/react-native/scripts/launchPackager.command ; exit;
+  254  adb devices -l
+  255  git status
+  256  git add --all
+  257  git coomit -m "Getting Image from the Server"
+  258  git commit -m "Getting Image from the Server"
+  259  git push
+  260  git status 
+  261  git add --all
+  262  git commit -m "ExpenseEdit and Upload new Version - OK"
+  263  git push
+  264  git status
+  265  yarn add react-native-text-detector
+  266  react-native link
+  267  cd ios
+  268  pods install
+  269  pod install
+  270  cd ..
+  271  react-native run-ios
+  272  history |  grep ios
+  273  react-native run-ios --simulator="iPhone Xs"
+  274  git statua
+  275  git status
+  276  git reset --hard
+  277  git satus
+  278  git status
+  279  git
+  280  git status
+  281  react-native run-ios --simulator="iPhone Xs"
+  282  git status
+  283  git diff
+  284  yarn add react-native-text-detector@git+https://git@github.com/zsajjad/react-native-text-detector.git#firebase
+  285  react-native link
+  286  git status
+  287  git diff android/app/build.gradle
+  288  git diff
+  289  cd ios
+  290  pod install
+  291  adb devices -l
+  292  pod install
+  293  cocoapods
+  294  pod --version
+  295  cd ..
+  296  ls -als
+  297  history | grep ios
+  298  react-native run-ios --simulator="iPhone Xs"
+  299  react-native run-ios --simulator="iPhone Xs"
+  300  cd ios
+  301  cd ..
+  302  tree tree -P "*RCTDefines.h*"
+  303  tree -P "*RCTDefines.h*"
+  304  find . -P "*RCTDefines.h*"
+  305  find . "*RCTDefines.h*"
+  306  find . "*React*"
+  307  ls -als
+  308  ls -als
+  309  find . "*React*"
+  310  find . "*React*" /more
+  311  find . "*React*" |  more
+  312  git status
+  313  git reset --hard
+  314  git status
+  315  git status
+  316  git status
+  317  history
+  318  yarn add react-native-text-detector@git+https://git@github.com/zsajjad/react-native-text-detector.git#firebase
+  319  react-native link ios
+  320  ls -als
+  321  react-native link 
+  322  cd ios
+  323  pod install
+  324  cd ..
+  325  adb devices -l
+  326  react-native run-android
+  327  react-native run-android
+  328  react-native run-android
+  329  react-native run-android
+  330  react-native run-android
+  331  react-native run-android
+  332  react-native run-android
+  333  git status
+  334  history | grep ios
+  335  react-native run-ios --simulator="iPhone Xs"
+  336  react-native run-ios --simulator="iPhone Xs"
+  337  react-native run-android
+  338  react-native run-android
+  339  react-native run-android
+  340  react-native run-android
+  341  react-native run-android
+  342  react-native run-android
+  343  history | grep ios
+  344  react-native run-ios --simulator="iPhone Xs"
+  345  git status
+  346  git add --all
+  347  git commit -m "Adding Text Recognition to Android and IOS"
+  348  git push
+  349  brew install git-lfs
+  350  git lfs init
+  351  git-lfs init
+  352  git lfs install
+  353  git status
+  354  git push
+  355  git lfs track ios/Pods/GoogleMobileVision/TextDetector/Frameworks/TextDetector.framework/TextDetector
+  356  git status
+  357  cat .gitattributes 
+  358  git add .gitattributes 
+  359  git status
+  360  git commit -m "Adding GIT LFS"
+  361  git push
+  362  git lfs
+  363  git log
+  364  cat .gitattributes 
+  365  git push
+  366  `git lfs push --all origin`
+  367  git lfs push --all origin
+  368  git push
+  369  git lfs install
+  370  `git lfs push --all origin`
+  371  git psuh
+  372  git push
+  373  ifconfg -a
+  374  ifconfig -a
+  375  git status
+  376  git diff ios/Pods/GoogleMobileVision/TextDetector/Frameworks/TextDetector.framework/TextDetector
+  377  git add src/components/ExpenseInfo.js
+  378  git add src/components/ExpenseRow.js
+  379  git add src/components/STCamera.js
+  380  git status
+  381  git commit -m "Resolving issues with Expense Edit & Info""
+  382  git commit -m "Resolving issues with Expense Edit & Info"
+  383  git push
+  384  git sizer
+  385  git filter-branch -f --index-filter 'git rm --cached --ignore-unmatch ios/Pods/GoogleMobileVision/TextDetector/Frameworks/TextDetector.framework/TextDetector'
+  386  git push
+  387  git status
+  388  git commit -m "Deleted Files - RN Text Recognition with problems IOS"
+  389  git push
+  390  git status
+  391  git status
+  392  git add --all
+  393  git status
+  394  git commit -m "Adding Edit Info"
+  395  git status
+  396  react-native run-android
+  397  react-native run-android
+  398  adb devices -l
+  399  react-native run-android
+  400  git push
+  401  git status
+  402  ifconfif -a
+  403  ifconfig -a
+  404  git status
+  405  git add --all
+  406  git commit -m "Resolving issue with Edit""
+  407  git commit -m "Resolving issue with Edit"
+  408  git push
+  409  git status
+  410  git diff
+  411  git add --all
+  412  git commit -m "Refactoing ExpenseEdit Submission"
+  413  git push
+  414  git status
+  415  git status
+  416  yarn add react-native-firebase-mlkit
+  417  rect-native link
+  418  react-native link
+  419  ls -als
+  420  git status
+  421  ls -als
+  422  ls -als
+  423  cd ios
+  424  pod install
+  425  ls -als
+  426  pod install
+  427  react-native  run-android
+  428  exit
+  429  react-native run-android
+  430  react-native run-android
+  431  react-native run-android
+  432  react-native run-android
+  433  history |  grep ios
+  434  react-native run-ios --simulator="iPhone Xs"
+  435  git status
+  436  git dif
+  437  git diff
+  438  git status
+  439  git diff
+  440  git log
+  441  git diff
+  442  git status
+  443  git reset --hard
+  444  git status
+  445  git status
+  446  git status
+  447  git clean -fd
+  448  git status
+  449  git status
+  450  git status
+  451  git push
+  452  git push
+  453  git status
+  454  git lfs install
+  455  git lfs track ios/Pods/GoogleMobileVision/TextDetector/Frameworks/TextDetector.framework/TextDetector
+  456  git status
+  457  git add --all
+  458  git status
+  459  git commit -m "Added Big file"
+  460  git push
+  461  git push
+  462  git lfs ls-files
+  463  git push
+  464  git rm --cached ios/Pods/GoogleMobileVision/TextDetector/Frameworks/TextDetector.framework/TextDetector
+  465  git status
+  466  git commit --amend -CHEAD
+  467  git push
+  468  git status
+  469  git status
+  470  git status
+  471  git push
+  472  bfg
+  473  history | grep lfs
+  474  git lfs ls-files
+  475  brew install bfg
+  476  bfg
+  477  bfg --delete-files ios/Pods/GoogleMobileVision/TextDetector/Frameworks/TextDetector.framework/TextDetector
+  478  cd /Users/Orlando/myWorkSpace2019/myproject2019/stellaxius_expenses_salesforce_react_native/StellaxiusExpensesAppReact/ios/Pods/GoogleMobileVision/TextDetector/Frameworks/TextDetector.framework/ 
+  479  ls -als
+  480  cd ..
+  481  cd ..
+  482  cd ..
+  483  cd ..
+  484  cd ..
+  485  cd ..
+  486  ls -als
+  487  bfg --delete-files TextDetector
+  488  git status
+  489  git psuh
+  490  git push
+  491  git status
+  492  cat /Users/Orlando/myWorkSpace2019/myproject2019/stellaxius_expenses_salesforce_react_native/StellaxiusExpensesAppReact.bfg-report/2019-07-18/16-59-54
+  493  cd  /Users/Orlando/myWorkSpace2019/myproject2019/stellaxius_expenses_salesforce_react_native/StellaxiusExpensesAppReact.bfg-report/2019-07-18/16-59-54
+  494  ls -als
+  495  cat deleted-files.txt 
+  496  yarn add @react-native-community/slider
+  497  react-native link @react-native-community/slider
+  498  pwd
+  499  brew tap SFDO-Tooling/homebrew-sfdo
+  500   brew install cumulusci
+  501  brew upgrade cumulusci
+  502  cci version
+  503  pwd
+  504  cd ..
+  505  ls -als
+  506  cd ..
+  507  ls -als
+  508  mkdir salesforce_npsp_project
+  509  cd salesforce_npsp_project/
+  510  ls -als
+  511  cci project info
+  512  cci project info
+  513   git clone https://github.com/YOUR_GITHUB_FORK_USER/CumulusCI-Test
+  514  git clone https://github.com/oagostinho/CumulusCI-Test
+  515  ls -als
+  516  cd CumulusCI-Test/
+  517  ls -als
+  518  mate .
+  519  cci project info
+  520   cci service connect github
+  521   cci service connect github
+  522  cci org info
+  523  cci org list
+  524  cci task run connected_app
+  525  ls -als
+  526  mate .
+  527  cd ..
+  528  ls -als
+  529  cci task run connected_app
+  530  cd CumulusCI-Test/
+  531  sfdx force:auth:web:login --setdefaultdevhubusername --setalias my-sf-nonprofit
+  532  sfdx force:auth:web:login --setdefaultdevhubusername --setalias my-sf-nonprofit-org
+  533  cci org list
+  534  cci org info dev
+  535  cci org info dev
+  536  cci flow run dev_org
+  537  cci flow run dev
+  538  cci flow run my-sf-nonprofit-org
+  539  cci org list
+  540  cci org default dev
+  541  cci flow run dev_org
+  542  cci task run update_admin_profile
+  543  cci flow run test_data_dev_org
+  544  cci flow run test_data_dev_org
+  545  cci flow list
+  546  cci flow run dev_org
+  547  cci task run update_admin_profile
+  548  cci flow run test_data_dev_org
+  549  sfdx force:org:open
+  550  cci org connect packaging
+  551  sfdx force:org:open -u DevHub
+  552  sfdx force:org:open 
+  553   cci task run connected_app
+  554  sfdx force:org:open -u my-sf-nonprofit-org
+  555  cci flow list
+  556  history | grep sdfx
+  557  history | grep sd
+  558  history | grep fx
+  559  cci org list
+  560  cci org connect 
+  561  cci org connect  --help
+  562  cci org connect  --default
+  563  cci org connect  --default my-sf-nonprofit-org
+  564  cci org list
+  565  cci org connect  
+  566  cci flow run dev_org
+  567  cci task run update_admin_profile
+  568  cci flow run test_data_dev_org
+  569  ls -als
+  570  cd ..
+  571  ls -als
+  572  mkdir CumulusCI
+  573  cd CumulusCI
+  574  ls -asl
+  575  cci org connect  --default my-sf-nonprofit-org
+  576  cci project init
+  577  git init
+  578  cci project init
+  579  cci org connect  --default my-sf-nonprofit-org
+  580  cci flow run dev_org
+  581  cci flow run dev_org
+  582  cd ..
+  583  ls -las
+  584  cd CumulusCI-Test/
+  585  ls -als
+  586  cci org list
+  587  cci flow run dev_org
+  588  cci task run update_admin_profile
+  589  mate .
+  590  cd ..
+  591  ls -als
+  592  rm CumulusCI
+  593  rm CumulusCI -r
+  594  rm CumulusCI 
+  595  rm CumulusCI -f
+  596  rm
+  597   --help
+  598  rm --help
+  599* man rm 
+  600  rm CumulusCI -d
+  601  rm -f CumulusCI 
+  602  rm -fd CumulusCI 
+  603  rm -fdr CumulusCI 
+  604  git clone https://github.com/oagostinho/Cumulus.git
+  605  cci org connect  --default my-dev
+  606  ls
+  607  cd Cumulus
+  608  cci org connect  --default my-dev
+  609  cci org list
+  610  cci task run connected_app
+  611  history | grep defaultdevhubusername.
+  612  sfdx force:auth:web:login --setdefaultdevhubusername --setalias my-dev
+  613  cci task run connected_app
+  614  cci org list
+  615  cci flow run dev_org
+  616  cci task run update_admin_profile
+  617  cci flow run test_data_dev_org
+  618  mate .
+  619  cci org list
+  620  cci org list
+  621  cci org info
+  622  history
+  623  cci org list
+  624  pwd
+  625  ls -als
+  626  history > salesforce_npsp_installation.txt
